@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوتنامه جشن ازدواج</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="دعوتنامه جشن ازدواج 💍">
+<meta property="og:description" content="با حضور شما، جشن ما زیباتر خواهد شد">
+<meta property="og:image" content="https://USERNAME.github.io/wedding/photo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+
+<style>
+body{
+  margin:0;
+  font-family:Tahoma, sans-serif;
+  direction:rtl;
+  text-align:center;
+  background:linear-gradient(135deg,#fff0f5,#ffe4e1);
+  overflow-x:hidden;
+}
+
+/* گل رز شناور */
+.rose{
+  position:fixed;
+  top:-50px;
+  font-size:24px;
+  animation:fall linear infinite;
+  opacity:0.8;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}
+
+.container{
+  max-width:650px;
+  margin:auto;
+  padding:20px;
+  position:relative;
+  z-index:2;
+}
+
+h1{
+  color:#880e4f;
+  font-size:22px;
+  line-height:1.9;
+}
+
+img{
+  width:100%;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+.info{
+  background:rgba(255,255,255,0.95);
+  padding:20px;
+  margin-top:25px;
+  border-radius:20px;
+  line-height:2;
+  font-size:16px;
+}
+
+.countdown{
+  margin-top:20px;
+  font-size:18px;
+  color:#ad1457;
+  font-weight:bold;
+}
+
+button{
+  margin-top:20px;
+  padding:10px 22px;
+  border:none;
+  border-radius:15px;
+  background:#c2185b;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.navbtn{
+  display:block;
+  margin:10px auto;
+  padding:12px;
+  width:85%;
+  max-width:330px;
+  background:#880e4f;
+  color:white;
+  text-decoration:none;
+  border-radius:15px;
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+به نام خالق عشق ❤️<br><br>
+با افتخار و شادمانی<br>
+شما را به جشن پیوند آسمانی خود دعوت می‌کنیم
+</h1>
+
+<img src="photo.jpg" alt="Wedding">
+
+<div class="info">
+📍 محل برگزاری:<br>
+باغ تالار پارادایس پرنس<br>
+اتوبان خلیج فارس<br>
+۵ کیلومتر بعد از شهر آفتاب<br>
+جهان آباد پایین<br><br>
+
+🗓 ۱۲ اسفند ۱۴۰۴<br>
+⏰ ساعت ۱۹:۰۰<br><br>
+
+حضور گرم شما، زینت‌بخش این شب رویایی خواهد بود ✨
+</div>
+
+<div class="countdown" id="countdown"></div>
+
+<button onclick="playMusic()">🎵 پخش موزیک عاشقانه</button>
+
+<br><br>
+<strong>مسیریابی آنلاین</strong>
+
+<a class="navbtn" href="https://www.google.com/maps/search/?api=1&query=باغ+تالار+پارادایس+پرنس" target="_blank">📍 Google Maps</a>
+
+<a class="navbtn" href="https://waze.com/ul?q=باغ%20تالار%20پارادایس%20پرنس&navigate=yes" target="_blank">🚗 Waze</a>
+
+<a class="navbtn" href="https://neshan.org/maps/search/باغ%20تالار%20پارادایس%20پرنس" target="_blank">🧭 نشان</a>
+
+<a class="navbtn" href="https://balad.ir/search/باغ%20تالار%20پارادایس%20پرنس" target="_blank">🗺 بلد</a>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+// تایمر (12 اسفند 1404 ≈ 2 March 2026)
+var weddingDate = new Date("March 2, 2026 19:00:00").getTime();
+
+setInterval(function() {
+  var now = new Date().getTime();
+  var distance = weddingDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+
+  document.getElementById("countdown").innerHTML =
+  "⏳ " + days + " روز و " + hours + " ساعت تا شب رویایی ما باقی مانده";
+
+}, 1000);
+
+function playMusic(){
+  document.getElementById("bgMusic").play();
+}
+
+/* ساخت گل رز شناور */
+for(let i=0;i<20;i++){
+  let rose=document.createElement("div");
+  rose.className="rose";
+  rose.innerHTML="🌹";
+  rose.style.left=Math.random()*100+"vw";
+  rose.style.animationDuration=(5+Math.random()*5)+"s";
+  rose.style.fontSize=(18+Math.random()*20)+"px";
+  document.body.appendChild(rose);
+}
+</script>
+
+</body>
+</html>
+
